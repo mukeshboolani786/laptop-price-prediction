@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Dataset</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { padding: 20px; }
+        h1 { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Laptop Dataset</h1>
+    
+    <form method="POST" class="form-inline mb-3">
+    <input type="text" name="company" class="form-control mr-2"
+           placeholder="Enter company (e.g. Dell, HP)" required>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+
+
+{% for table in tables %}
+    {{ table|safe }}
+{% endfor %}
+</body>
+</html>
+
+
