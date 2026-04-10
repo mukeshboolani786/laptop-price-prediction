@@ -3,28 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop Dataset</title>
+    <title>Laptop Price Prediction</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         body { padding: 20px; }
         h1 { margin-bottom: 20px; }
     </style>
+
 </head>
+
 <body>
-    <h1>Laptop Dataset</h1>
-    
-    <form method="POST" class="form-inline mb-3">
-    <input type="text" name="company" class="form-control mr-2"
-           placeholder="Enter company (e.g. Dell, HP)" required>
-    <button type="submit" class="btn btn-primary">Search</button>
+
+<div class="container">
+
+<h1>Laptop Price Prediction</h1>
+
+<form method="POST">
+
+<div class="form-row">
+
+<div class="form-group col-md-4">
+<label>Company</label>
+<input type="text" name="company" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>Type</label>
+<input type="text" name="type" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>RAM</label>
+<input type="number" name="ram" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>Inches</label>
+<input type="number" step="0.1" name="inches" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>Memory</label>
+<input type="text" name="memory" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>CPU</label>
+<input type="text" name="cpu" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>GPU</label>
+<input type="text" name="gpu" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>Operating System</label>
+<input type="text" name="os" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>Weight</label>
+<input type="text" name="weight" class="form-control" required>
+</div>
+
+<div class="form-group col-md-4">
+<label>Screen Resolution</label>
+<input type="text" name="resolution" class="form-control" required>
+</div>
+
+</div>
+
+<button type="submit" class="btn btn-primary">Predict Price</button>
+
 </form>
 
+{% if prediction %}
+<div class="alert alert-success mt-4">
+<h3>Predicted Price: € {{ prediction }}</h3>
+</div>
+{% endif %}
 
+</div>
 
-{% for table in tables %}
-    {{ table|safe }}
-{% endfor %}
 </body>
 </html>
-
-
